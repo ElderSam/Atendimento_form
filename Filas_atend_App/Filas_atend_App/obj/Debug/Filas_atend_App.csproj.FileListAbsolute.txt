@@ -1,0 +1,9 @@
+G:\un\5 semestre\Filas_atend_App\Filas_atend_App\bin\Debug\Filas_atend_App.exe.config
+G:\un\5 semestre\Filas_atend_App\Filas_atend_App\obj\Debug\Filas_atend_App.csprojResolveAssemblyReference.cache
+G:\un\5 semestre\Filas_atend_App\Filas_atend_App\obj\Debug\Filas_atend_App.Form1.resources
+G:\un\5 semestre\Filas_atend_App\Filas_atend_App\obj\Debug\Filas_atend_App.Properties.Resources.resources
+G:\un\5 semestre\Filas_atend_App\Filas_atend_App\obj\Debug\Filas_atend_App.csproj.GenerateResource.Cache
+G:\un\5 semestre\Filas_atend_App\Filas_atend_App\bin\Debug\Filas_atend_App.exe
+G:\un\5 semestre\Filas_atend_App\Filas_atend_App\bin\Debug\Filas_atend_App.pdb
+G:\un\5 semestre\Filas_atend_App\Filas_atend_App\obj\Debug\Filas_atend_App.exe
+G:\un\5 semestre\Filas_atend_App\Filas_atend_App\obj\Debug\Filas_atend_App.pdb
