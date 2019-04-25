@@ -7,3 +7,12 @@ G:\un\5 semestre\Filas_atend_App\Filas_atend_App\bin\Debug\Filas_atend_App.exe
 G:\un\5 semestre\Filas_atend_App\Filas_atend_App\bin\Debug\Filas_atend_App.pdb
 G:\un\5 semestre\Filas_atend_App\Filas_atend_App\obj\Debug\Filas_atend_App.exe
 G:\un\5 semestre\Filas_atend_App\Filas_atend_App\obj\Debug\Filas_atend_App.pdb
+C:\Users\Sistemas.LC6_66\Desktop\Atendimento_form-master\Filas_atend_App\Filas_atend_App\bin\Debug\Filas_atend_App.exe.config
+C:\Users\Sistemas.LC6_66\Desktop\Atendimento_form-master\Filas_atend_App\Filas_atend_App\obj\Debug\Filas_atend_App.exe
+C:\Users\Sistemas.LC6_66\Desktop\Atendimento_form-master\Filas_atend_App\Filas_atend_App\obj\Debug\Filas_atend_App.pdb
+C:\Users\Sistemas.LC6_66\Desktop\Atendimento_form-master\Filas_atend_App\Filas_atend_App\bin\Debug\Filas_atend_App.exe
+C:\Users\Sistemas.LC6_66\Desktop\Atendimento_form-master\Filas_atend_App\Filas_atend_App\bin\Debug\Filas_atend_App.pdb
+C:\Users\Sistemas.LC6_66\Desktop\Atendimento_form-master\Filas_atend_App\Filas_atend_App\obj\Debug\Filas_atend_App.csprojResolveAssemblyReference.cache
+C:\Users\Sistemas.LC6_66\Desktop\Atendimento_form-master\Filas_atend_App\Filas_atend_App\obj\Debug\Filas_atend_App.Form1.resources
+C:\Users\Sistemas.LC6_66\Desktop\Atendimento_form-master\Filas_atend_App\Filas_atend_App\obj\Debug\Filas_atend_App.Properties.Resources.resources
+C:\Users\Sistemas.LC6_66\Desktop\Atendimento_form-master\Filas_atend_App\Filas_atend_App\obj\Debug\Filas_atend_App.csproj.GenerateResource.Cache

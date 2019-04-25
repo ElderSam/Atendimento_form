@@ -24,6 +24,10 @@ namespace Filas_atend_App
             this.NomeRes = nome;
             this.Desc = dsc;
         }
+        public void imprimir()
+        {
+            Console.WriteLine(this.Num + " " + this.NomeRes);
+        }
 
     }
 }

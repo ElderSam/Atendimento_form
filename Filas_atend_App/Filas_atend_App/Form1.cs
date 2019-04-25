@@ -13,25 +13,27 @@ namespace Filas_atend_App
     public partial class Form1 : Form
     {
 
-        Protocolo p = new Protocolo(); /* cria o objeto só uma vez para economizar memória 
-                                 (as pilhas vão guardar cada protocolo criado, assim poderão aproveitar o mesmo objeto)*/
+
 
         int n = 0;
         int prioridade = 1;
+        string prot;
 
         /* Listas de Priodidades: Alta, Média e Baixa */
         Queue<Protocolo> filaAlta = new Queue<Protocolo>();
         Queue<Protocolo> filaMedia = new Queue<Protocolo>();
         Queue<Protocolo> filaBaixa = new Queue<Protocolo>();
 
-        int aux;
-        Protocolo x;
+        Protocolo aux;
+       
         int tamA, tamM, tamB;
         int atendimentos = 0;
- 
-  
+
+
         public Form1()
         {
+
+
             InitializeComponent();
 
 
@@ -39,7 +41,8 @@ namespace Filas_atend_App
             comboBox1.Items.Add("Média");
             comboBox1.Items.Add("Baixa");
 
-            comboBox1.SelectedIndex = 0;
+            comboBox1.SelectedIndex = 0; //O que vai mostrar primeiro
+
 
         }
 
@@ -105,25 +108,26 @@ namespace Filas_atend_App
             }
             else {
                 n = int.Parse(txtNum.Text);
-
+                Protocolo p = new Protocolo(); //precisa dar new aqui para não criar uma fila com o mesmo protocolo repetido
                 p.setAll(n, txtName.Text, txtDesc.Text);
 
 
                 int x = comboBox1.SelectedIndex;
                 if (x == 0) //se foi escolhida prioridade ALTA------------------------------------------------
                 {
-                    filaAlta.Enqueue(p);
-                    listBoxAlta.Items.Add(n + " - " + txtName.Text);
+                    
+                    filaAlta.Enqueue(p);               
+                    listBoxAlta.Items.Add(p.Num + " - " + p.NomeRes);
                 }
                 else if(x == 1) //prioridade MÉDIA
                 {
                     filaMedia.Enqueue(p);
-                    listBoxMedia.Items.Add(n + " - " + txtName.Text);
+                    listBoxMedia.Items.Add(p.Num + " - " + p.NomeRes);
                 }
                 else if (x == 2) //prioridade BAIXA
                 {
                     filaBaixa.Enqueue(p);
-                    listBoxBaixa.Items.Add(n + " - " + txtName.Text);
+                    listBoxBaixa.Items.Add(p.Num + " - " + p.NomeRes);
                 }
                 else
                 {
@@ -171,30 +175,30 @@ namespace Filas_atend_App
             tamB = filaBaixa.Count();
 
             if (tamA > 0 && atendimentos < 5)
-            {                
-                filaAlta.Dequeue();
-                aux = listBoxAlta.Items.IndexOf(1);
+            {
+                aux = filaAlta.Dequeue();     
                 listBoxAlta.Items.RemoveAt(0);
                 tamA = filaAlta.Count();
-                MessageBox.Show("Protocolo atendido!");
+                MessageBox.Show("Protocolo " + aux.Num + " atendido!");
+  
                 atendimentos++;
             }
             else if (tamM > 0 && atendimentos < 5)
             {
                 filaMedia.Dequeue();
-                aux = listBoxMedia.Items.IndexOf(1);
+  
                 listBoxMedia.Items.RemoveAt(0);
                 tamM = filaMedia.Count();
-                MessageBox.Show("Protocolo atendido!");
+                MessageBox.Show("Protocolo " + aux.Num + " atendido!");
                 atendimentos++;
             }
             else if (tamB > 0 && atendimentos < 5)
             {
                 filaBaixa.Dequeue();
-                aux = listBoxBaixa.Items.IndexOf(1);
+           
                 listBoxBaixa.Items.RemoveAt(0);
                 tamB = filaBaixa.Count();
-                MessageBox.Show("Protocolo atendido!");
+                MessageBox.Show("Protocolo " + aux.Num + " atendido!");
                 atendimentos++;
             }
             else if(tamA == 0 && tamM == 0 && tamB == 0)//Se todas as filas estão vazias
@@ -204,16 +208,23 @@ namespace Filas_atend_App
             }
             else //então chegaram a 5 atendimentos
             {
-              //  MessageBox.Show("Atingiu 5 atendimentos! \n Vamos organizar as filas.");
+               
 
-                if(tamB != 0)
+                if(tamB > 0)
                 {
-                   /* filaMedia.Enqueue(filaBaixa.Dequeue()); //tira um da baixa e coloca na media
-                    x = listBoxBaixa.Items.;
-                    listBoxMedia.Items.Add(x);
-                    filaAlta.Enqueue(filaMedia.Dequeue()); // tira um da media e coloca na alta
-                   */ atendimentos = 0;
+                    MessageBox.Show("Atingiu 5 atendimentos! \n Vamos organizar as filas.");
+                    aux = filaBaixa.Dequeue();
+                    filaMedia.Enqueue(aux); //tira um da baixa e coloca na media  
+                    listBoxBaixa.Items.RemoveAt(0);          
+                    listBoxMedia.Items.Add(aux.Num + " - " + aux.NomeRes);
+
+                    aux = filaMedia.Dequeue();
+                    filaAlta.Enqueue(aux); // tira um da media e coloca na alta
+                    listBoxMedia.Items.RemoveAt(0);
+                    listBoxAlta.Items.Add(aux.Num + " - " + aux.NomeRes);
+                  
                 }
+                atendimentos = 0; //mesmo se não tiver ninguem nas filas baixa e média, tem que zerar atendimentos, se não fica na mesma mensagem
             }
 
 
